@@ -1,6 +1,8 @@
 import './App.scss';
+import List from './components/List';
+import TempCalc from './components/TempCalc';
 
-interface PropType {
+type PropType = {
   name: string,
   age: number,
 }
@@ -30,11 +32,7 @@ const App = ({ name, age }: PropType) => {
         {` ${countElements(arr)} `}
         elements:
       </p>
-      <ol>
-        {arr.map((element) => (
-          <li key={element}>{element}</li>
-        ))}
-      </ol>
+      <List arr={arr} />
       <p>
         Also, my name is
         {` ${name}, `}
@@ -42,6 +40,7 @@ const App = ({ name, age }: PropType) => {
         {` ${age} `}
         years old.
       </p>
+      <TempCalc />
     </>
   );
 };
