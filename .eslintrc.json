@@ -24,8 +24,7 @@
     },
     "plugins": [
         "react",
-        "react-hooks",
-        "@typescript-eslint"
+        "react-hooks"
     ],
     "rules": {
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
