@@ -11,6 +11,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
         "airbnb"
     ],
     "parser": "@typescript-eslint/parser",
@@ -23,7 +24,8 @@
     },
     "plugins": [
         "react",
-        "react-hooks"
+        "react-hooks",
+        "@typescript-eslint"
     ],
     "rules": {
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
