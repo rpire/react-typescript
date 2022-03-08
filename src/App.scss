@@ -1,0 +1,26 @@
+@import "./assets/colors.scss", "./assets/mixins.scss";
+
+h1,
+p {
+  margin: 0 5%;
+}
+
+h1 {
+  @include text("roboto", 32px, 500, 32px);
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p,
+span {
+  @include text("monoscape", 18px, 300, 18px);
+}
+
+span {
+  color: $accent;
+}
+
+ol {
+  margin: 20px 5% 20px calc(5% + 2em);
+}

@@ -1,0 +1,37 @@
+name: Linters
+
+on: pull_request
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Setup ESLint
+        run: |
+          npm install --save-dev typescript eslint-import-resolver-typescript eslint-plugin-react@^7.28.0 @typescript-eslint/parser@latest @typescript-eslint/eslint-plugin@latest eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0 eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0
+          [ -f .eslintrc.json ] || wget https://gist.githubusercontent.com/rpire/15976c675fd029a6ecc911ab924ab21a/raw/fa37de15a9eb8812c50ae69cc9b438f7d3baca02/.eslintrc.json
+          [ -f tsconfig.json ] || wget https://gist.githubusercontent.com/rpire/2a072acfb16619e3e5e4b634d6af5439/raw/061bcf1ee43c11bc926d163b82cfb9600b85eec1/tsconfig.json
+      - name: ESLint Report
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+  stylelint:
+    name: Stylelint
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Setup Stylelint
+        run: |
+          npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+          [ -f .stylelintrc.json ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/react-redux/.stylelintrc.json
+      - name: Stylelint Report
+        run: npx stylelint "**/*.{css,scss}"

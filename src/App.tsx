@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface PropType {
+  name: string,
+  age: number,
 }
+
+const App = ({ name, age }: PropType) => {
+  const arr: string[] = ['foo', 'boo', 'loo', 'goo', 'zoo'];
+
+  const countElements = (arr: string[]): number => {
+    let count = 0;
+    arr.forEach(() => { count += 1; });
+    return count;
+  };
+
+  return (
+    <>
+      <h1>React + TypeScript</h1>
+      <p>
+        This project is created for me to practice the React.ts approach to build applications.
+      </p>
+      <p>
+        For example, this is a piece of code in
+        <span> TypeScript</span>
+        :
+      </p>
+      <p>
+        The array in the code has
+        {` ${countElements(arr)} `}
+        elements:
+      </p>
+      <ol>
+        {arr.map((element) => (
+          <li key={element}>{element}</li>
+        ))}
+      </ol>
+      <p>
+        Also, my name is
+        {` ${name}, `}
+        and I am
+        {` ${age} `}
+        years old.
+      </p>
+    </>
+  );
+};
 
 export default App;
