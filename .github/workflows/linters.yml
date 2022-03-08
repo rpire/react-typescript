@@ -19,7 +19,7 @@ jobs:
           npm install --save-dev eslint-plugin-react@^7.28.0 @typescript-eslint/eslint-plugin@latest eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0 @typescript-eslint/parser@latest eslint-import-resolver-typescript
           [ -f .eslintrc.json ] || wget https://gist.githubusercontent.com/rpire/15976c675fd029a6ecc911ab924ab21a/raw/fa37de15a9eb8812c50ae69cc9b438f7d3baca02/.eslintrc.json
       - name: ESLint Report
-        run: npx eslint "/src**"
+        run: npx eslint /src*
   stylelint:
     name: Stylelint
     runs-on: ubuntu-18.04
