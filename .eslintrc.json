@@ -17,6 +17,7 @@
     "extends": [
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "airbnb"
     ],
     "parser": "@typescript-eslint/parser",
@@ -25,7 +26,8 @@
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
@@ -50,7 +52,8 @@
         "react/function-component-definition": [
             2,
             {
-              "namedComponents": "arrow-function"
+              "namedComponents": ["function-declaration", "arrow-function"],
+              "unnamedComponents": ["function-expression", "arrow-function"]
             }
         ]
     },

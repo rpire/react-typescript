@@ -20,7 +20,7 @@ jobs:
           [ -f .eslintrc.json ] || wget https://gist.githubusercontent.com/rpire/15976c675fd029a6ecc911ab924ab21a/raw/fa37de15a9eb8812c50ae69cc9b438f7d3baca02/.eslintrc.json
           [ -f tsconfig.json ] || wget https://gist.githubusercontent.com/rpire/2a072acfb16619e3e5e4b634d6af5439/raw/061bcf1ee43c11bc926d163b82cfb9600b85eec1/tsconfig.json
       - name: ESLint Report
-        run: npx eslint "src/**"
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
   stylelint:
     name: Stylelint
     runs-on: ubuntu-18.04
