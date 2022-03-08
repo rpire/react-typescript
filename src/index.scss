@@ -1,0 +1,8 @@
+@import "./assets/colors.scss", "./assets/mixins.scss";
+
+@include normalize;
+
+body {
+  background-color: $primary-bg;
+  color: $primary-txt;
+}

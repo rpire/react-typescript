@@ -1,10 +1,49 @@
-import './App.css';
+import './App.scss';
 
-const App = () => (
-  <>
-    <h1>React + TypeScript</h1>
-    <p>This project is created for me to practice the React.ts approach to build applications.</p>
-  </>
-);
+interface PropType {
+  name: string,
+  age: number,
+}
+
+const App = ({ name, age }: PropType) => {
+  const arr: string[] = ['foo', 'boo', 'loo', 'goo', 'zoo'];
+
+  const countElements = (arr: string[]): number => {
+    let count = 0;
+    arr.forEach(() => { count += 1; });
+    return count;
+  };
+
+  return (
+    <>
+      <h1>React + TypeScript</h1>
+      <p>
+        This project is created for me to practice the React.ts approach to build applications.
+      </p>
+      <p>
+        For example, this is a piece of code in
+        <span> TypeScript</span>
+        :
+      </p>
+      <p>
+        The array in the code has
+        {` ${countElements(arr)} `}
+        elements:
+      </p>
+      <ol>
+        {arr.map((element) => (
+          <li key={element}>{element}</li>
+        ))}
+      </ol>
+      <p>
+        Also, my name is
+        {` ${name}, `}
+        and I am
+        {` ${age} `}
+        years old.
+      </p>
+    </>
+  );
+};
 
 export default App;
