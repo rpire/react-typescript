@@ -1,20 +1,42 @@
-@import "./assets/colors.scss", "./assets/mixins.scss";
+@use "." as *;
+
+@include normalize;
+
+body {
+  background-color: $primary-bg;
+  color: $primary-txt;
+}
 
 h1,
+h2,
 p {
   margin: 0 5%;
 }
 
-h1 {
-  @include text("roboto", 32px, 500, 32px);
-
+h1,
+h2 {
+  text-decoration: underline;
+  color: $accent;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+h1 {
+  @include text (monospace, 48px, 500, 48px);
+}
+
+h2 {
+  @include text(monospace, 32px, 500, 32px);
+}
+
 p,
-span {
-  @include text("monoscape", 18px, 300, 18px);
+span,
+ol {
+  @include text(sans-serif, 18px, 300, 18px);
+}
+
+p {
+  margin-top: 10px;
 }
 
 span {
