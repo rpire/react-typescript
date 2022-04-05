@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import './App.scss';
 import List from './components/List';
 import TempCalc from './components/TempCalc';
@@ -7,7 +8,7 @@ type PropType = {
   age: number,
 }
 
-const App = ({ name, age }: PropType) => {
+const App = ({ name, age }: PropType): ReactElement => {
   const arr: string[] = ['foo', 'boo', 'loo', 'goo', 'zoo'];
 
   const countElements = (arr: string[]): number => {

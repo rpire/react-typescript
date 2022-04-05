@@ -8,7 +8,8 @@ form {
 form {
   display: flex;
   justify-content: center;
-  gap: 15%;
+  gap: 10%;
+  margin: 0 5%;
 }
 
 label {
@@ -16,17 +17,19 @@ label {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: 45%;
 }
 
 .temp-input {
   background-color: $input-bg;
   color: $accent;
-  width: 200px;
+  outline-color: $accent;
+  width: 75%;
   height: 40px;
   padding: 8px;
   border: none;
   border-radius: 10px;
-  transition: 0.2s;
+  transition: width 0.2s;
 }
 
 .temp-input::-webkit-inner-spin-button,
@@ -34,7 +37,8 @@ label {
   -webkit-appearance: none;
 }
 
-.temp-input:focus {
-  outline-color: $accent;
-  width: 250px;
+.temp-input:focus,
+.temp-input:focus-visible {
+  outline: 1px solid $accent;
+  width: 100%;
 }

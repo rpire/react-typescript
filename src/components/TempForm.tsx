@@ -1,10 +1,18 @@
-import { ChangeEvent, useState } from 'react';
-import { initialTemperatures, calculateTemperatures } from '../logic/temperatures';
+import { FunctionComponent } from 'react';
+import useTemperatures from '../hooks/useTemperatures';
 
-const TempForm = () => {
-  const [temperatures, setTemperatures] = useState(initialTemperatures);
+interface State {
+  celsius: string;
+  farenheit: string;
+}
 
-  const handleTemperatues = (e: ChangeEvent): void => calculateTemperatures(e, setTemperatures);
+const TempForm: FunctionComponent = () => {
+  const initTemperatures = {
+    celsius: '',
+    farenheit: '',
+  };
+
+  const { temperatures, convertTemperatures } = useTemperatures<State>(initTemperatures);
 
   return (
     <form>
@@ -14,7 +22,7 @@ const TempForm = () => {
           type="number"
           name="celsius"
           value={temperatures.celsius}
-          onChange={handleTemperatues}
+          onChange={convertTemperatures}
           className="temp-input"
           placeholder="Enter a temperature in ºC"
         />
@@ -26,7 +34,7 @@ const TempForm = () => {
           type="number"
           name="farenheit"
           value={temperatures.farenheit}
-          onChange={handleTemperatues}
+          onChange={convertTemperatures}
           className="temp-input"
           placeholder="Enter a temperature in ºF"
         />

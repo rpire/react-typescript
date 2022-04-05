@@ -35,8 +35,13 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+            "error", { "allowExpressions": true }
+        ],
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
         "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "react/react-in-jsx-scope": "off",
         "import/extensions": [
