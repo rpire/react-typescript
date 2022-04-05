@@ -1,7 +1,8 @@
+import { FunctionComponent } from 'react';
 import TempForm from './TempForm';
 import './TempCalc.scss';
 
-const TempCalc = () => (
+const TempCalc: FunctionComponent = () => (
   <section>
     <h2>Temperature Calculator</h2>
     <p>

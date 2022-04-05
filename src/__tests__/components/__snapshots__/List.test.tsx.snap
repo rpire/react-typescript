@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component tests renders correctly 1`] = `
+<div>
+  <ol>
+    <li>
+      foo
+    </li>
+    <li>
+      boo
+    </li>
+    <li>
+      loo
+    </li>
+    <li>
+      goo
+    </li>
+    <li>
+      zoo
+    </li>
+  </ol>
+</div>
+`;

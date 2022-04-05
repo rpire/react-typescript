@@ -35,6 +35,9 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+            "error", { "allowExpressions": true }
+        ],
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "no-unused-vars": "off",

@@ -1,7 +1,18 @@
-import useTemperatures from '../logic/temperatures';
+import { FunctionComponent } from 'react';
+import useTemperatures from '../hooks/useTemperatures';
 
-const TempForm = () => {
-  const { temperatures, convertTemperatures } = useTemperatures();
+interface State {
+  celsius: string;
+  farenheit: string;
+}
+
+const TempForm: FunctionComponent = () => {
+  const initTemperatures = {
+    celsius: '',
+    farenheit: '',
+  };
+
+  const { temperatures, convertTemperatures } = useTemperatures<State>(initTemperatures);
 
   return (
     <form>
