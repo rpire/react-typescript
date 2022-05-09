@@ -41,12 +41,6 @@ const App = ({ name, age }: PropType) => {
         years old.
       </p>
       <TempCalc />
-      <p>This is an additional test paragraph.</p>
-      <p>
-        Let add one more, this time with a
-        <span> span</span>
-        .
-      </p>
     </>
   );
 };
